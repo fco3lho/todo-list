@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <p>
-        <span>To do list @ {new Date().getFullYear()}</span>
+        <span>To do list</span> @ {new Date().getFullYear()}
       </p>
     </footer>
   )
