@@ -6,7 +6,7 @@ import styles from "./TaskForm.module.css";
 //Interface
 import { ITask } from "../interfaces/Task";
 
-type Props = {
+interface Props {
   btnText: string;
   taskList: ITask[];
   setTaskList?: React.Dispatch<React.SetStateAction<ITask[]>>;
