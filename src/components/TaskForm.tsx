@@ -33,7 +33,7 @@ const TaskForm = ({
     }
   }, [task]);
 
-  const saveTask = (data: ITask) => {
+  const saveTask = (data: ITask[]) => {
     localStorage.setItem("data", JSON.stringify(data));
   };
 
@@ -47,7 +47,7 @@ const TaskForm = ({
       const newTask: ITask = { id, title, difficulty };
 
       setTaskList!([...taskList, newTask]);
-      saveTask(newTask);
+      saveTask([...taskList, newTask]);
 
       setTitle("");
       setDifficulty(0);
