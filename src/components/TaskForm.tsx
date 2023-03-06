@@ -33,16 +33,21 @@ const TaskForm = ({
     }
   }, [task]);
 
+  const saveTask = (data: ITask) => {
+    localStorage.setItem("data", JSON.stringify(data));
+  };
+
   const addTaskHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (handleUpdate) {
-      handleUpdate(id, title, difficulty)
+      handleUpdate(id, title, difficulty);
     } else {
       const id = Math.floor(Math.random() * 1000);
       const newTask: ITask = { id, title, difficulty };
 
       setTaskList!([...taskList, newTask]);
+      saveTask(newTask);
 
       setTitle("");
       setDifficulty(0);
