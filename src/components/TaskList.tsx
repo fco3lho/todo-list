@@ -12,11 +12,11 @@ interface Props {
   handleEdit(task: ITask): void;
 }
 
-const items = localStorage.getItem('data')
-const parsedItems = JSON.parse(items || '[]') as ITask[]
+const items = localStorage.getItem("data");
+const parsedItems = JSON.parse(items || "[]") as ITask[];
 
 const TaskList = ({ taskList, handleDelete, handleEdit }: Props) => {
-  taskList = taskList.concat(parsedItems)
+  taskList = taskList.concat(parsedItems);
 
   return (
     <>

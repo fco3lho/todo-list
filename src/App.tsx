@@ -20,7 +20,7 @@ function App() {
   const deleteTask = (id: number) => {
     setTaskList(
       taskList.filter((task) => {
-        return task.id !== id;
+        return localStorage.setItem('data', JSON.stringify(taskList)), task.id !== id;
       })
     );
   };
@@ -48,6 +48,7 @@ function App() {
     });
 
     setTaskList(updatedItems);
+    localStorage.setItem('data', JSON.stringify(taskList))
 
     hideOrShowModal(false);
   };
